@@ -1,6 +1,5 @@
 package com.codeclan.example.PetApp.models;
 
-import com.codeclan.example.PetApp.models.PetOwner;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -19,16 +18,17 @@ public class Pet {
     @JoinColumn(name = "petowner_id", nullable = false)
     private PetOwner petowner;
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
     public Pet(){
     }
 
-    public Pet(String name, String type){
+    public Pet(String name, String type, PetOwner petOwner){
         this.name = name;
         this.type = type;
+        this.petowner = petOwner;
     }
 
     public String getName() {
@@ -47,12 +47,12 @@ public class Pet {
         this.type = type;
     }
 
-    public PetOwner getPetowner() {
+    public PetOwner getPetOwner() {
         return petowner;
     }
 
-    public void setPetowner(PetOwner petowner) {
-        this.petowner = petowner;
+    public void setPetOwner(PetOwner petOwner) {
+        this.petowner = petOwner;
     }
 
     public Long getId() {
@@ -62,4 +62,5 @@ public class Pet {
     public void setId(Long id) {
         Id = id;
     }
+
 }

@@ -18,7 +18,7 @@ public class PetOwner {
     @OneToMany(mappedBy = "petowner", fetch = FetchType.LAZY)
     private List<Pet> pets;
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
@@ -52,5 +52,9 @@ public class PetOwner {
 
     public void setId(Long id) {
         Id = id;
+    }
+
+    public void addPet(Pet pet) {
+        this.pets.add(pet);
     }
 }
