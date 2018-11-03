@@ -1,4 +1,6 @@
 package com.codeclan.example.PetApp.repository;
 
-public class BusinessRepositoryImpl {
+public class BusinessRepositoryImpl implements BusinessRepositoryCustom {
+
+
 }
