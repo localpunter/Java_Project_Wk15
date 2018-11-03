@@ -1,11 +1,24 @@
 package com.codeclan.example.PetApp.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "services")
 public class Service {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "type")
     private String type;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "business_id", nullable = false)
     Business business;
 
     public Service(String type, Business business) {
