@@ -1,14 +1,17 @@
 package com.codeclan.example.PetApp.models;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
+@Table(name = "businesses")
 
 public class Business {
-
-   private Long id;
-   private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name")
+    private String name;
 //   private ArrayList<Service> serviceList;
 
 
