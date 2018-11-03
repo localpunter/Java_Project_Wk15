@@ -25,7 +25,7 @@ public class Booking {
     public Booking (String date, Long petId, Long serviceId) {
 
         this.petId = petId;
-        this/serviceId = serviceId;
+        this.serviceId = serviceId;
         this.date - date;
 
     }
