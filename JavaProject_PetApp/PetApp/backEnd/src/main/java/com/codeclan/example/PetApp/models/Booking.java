@@ -6,12 +6,19 @@ package com.codeclan.example.PetApp.models;
 
 public class Booking {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany
+    @JoinColumn(name = "pet_id", nullable = false)
     private Long petId;
 
+    @OneToMany
+    @JoinColumn(name = "service_id", nullable = false)
     private Long serviceId;
 
+    @Column (name = "date")
     private String date;
 
 
