@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "businesses")
@@ -18,7 +19,7 @@ public class Business {
 
     @JsonIgnore
     @OneToMany(mappedBy = "business", fetch = FetchType.LAZY)
-    private ArrayList<Service> serviceList;
+    private List<Service> serviceList;
 
 
     public Business(String name) {
@@ -45,11 +46,15 @@ public class Business {
         this.name = name;
     }
 
-    public ArrayList<Service> getServiceList() {
+    public List<Service> getServiceList() {
         return serviceList;
     }
 
-    public void setServiceList(ArrayList<Service> serviceList) {
+    public void setServiceList(List<Service> serviceList) {
         this.serviceList = serviceList;
+    }
+
+    public void addService(Service service) {
+        this.serviceList.add(service);
     }
 }
