@@ -1,4 +1,7 @@
 package com.codeclan.example.PetApp.repository;
 
-public interface ServiceRepository {
+import com.codeclan.example.PetApp.models.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ServiceRepository extends JpaRepository<Service, Long>, ServiceRepositoryCustom {
 }
