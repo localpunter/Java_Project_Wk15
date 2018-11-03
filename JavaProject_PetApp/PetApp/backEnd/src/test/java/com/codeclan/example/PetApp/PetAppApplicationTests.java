@@ -1,7 +1,9 @@
 package com.codeclan.example.PetApp;
 
+import com.codeclan.example.PetApp.models.Business;
 import com.codeclan.example.PetApp.models.Pet;
 import com.codeclan.example.PetApp.models.PetOwner;
+import com.codeclan.example.PetApp.repository.BusinessRepository;
 import com.codeclan.example.PetApp.repository.PetOwnerRepository;
 import com.codeclan.example.PetApp.repository.PetRepository;
 import org.junit.Test;
@@ -20,6 +22,9 @@ public class PetAppApplicationTests {
 	@Autowired
 	PetOwnerRepository petOwnerRepository;
 
+	@Autowired
+	BusinessRepository businessRepository;
+
 	@Test
 	public void contextLoads() {
 	}
@@ -32,6 +37,14 @@ public class PetAppApplicationTests {
 		petRepository.save(pet);
 		petOwner.addPet(pet);
 		petOwnerRepository.save(petOwner);
+	}
+
+	@Test
+	public void canSaveBusiness() {
+		Business business = new Business("Filip's Vet");
+		businessRepository.save(business);
+
+
 	}
 
 }
