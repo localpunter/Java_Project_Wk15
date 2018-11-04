@@ -12,22 +12,22 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "pet_id", nullable = false)
-    private Long petId;
+    private Pet pet;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "service_id", nullable = false)
-    private Long serviceId;
+    private Service service;
 
     @Column (name = "date")
     private String date;
 
 
-    public Booking (String date, Long petId, Long serviceId) {
+    public Booking (String date, Pet pet, Service service) {
 
-        this.petId = petId;
-        this.serviceId = serviceId;
+        this.pet = pet;
+        this.service = service;
         this.date = date;
 
     }
@@ -43,20 +43,20 @@ public class Booking {
         this.id = id;
     }
 
-    public Long getPetId() {
-        return petId;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setPetId(Long petId) {
-        this.petId = petId;
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
-    public Long getServiceId() {
-        return serviceId;
+    public Service getService() {
+        return service;
     }
 
-    public void setServiceId(Long serviceId) {
-        this.serviceId = serviceId;
+    public void setService(Service service) {
+        this.service = service;
     }
 
     public String getDate() {

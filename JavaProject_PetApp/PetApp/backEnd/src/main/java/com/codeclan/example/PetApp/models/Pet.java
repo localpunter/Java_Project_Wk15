@@ -3,6 +3,8 @@ package com.codeclan.example.PetApp.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "pets")
@@ -22,6 +24,10 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "pet", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
+
     public Pet(){
     }
 
@@ -29,6 +35,7 @@ public class Pet {
         this.name = name;
         this.type = type;
         this.petowner = petOwner;
+        this.bookings = new ArrayList<>();
     }
 
     public String getName() {
@@ -63,4 +70,19 @@ public class Pet {
         Id = id;
     }
 
+    public PetOwner getPetowner() {
+        return petowner;
+    }
+
+    public void setPetowner(PetOwner petowner) {
+        this.petowner = petowner;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }
