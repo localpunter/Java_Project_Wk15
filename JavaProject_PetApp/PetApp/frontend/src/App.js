@@ -9,6 +9,10 @@ class App extends Component {
       <Router>
         <React.Fragment>
         <NavBarHome />
+        <Switch>
+          <Route exact path = '/petowners' component={PetOwnerContainer}/>
+          <Route exact path = '/businesses' component={BusinessContainer}/>
+        </Switch>
         </React.Fragment>
       </Router>
     );

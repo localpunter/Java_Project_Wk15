@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 const NavBarHome = (props) => {
   return (
     <header>
-
-
       <ul>
         <li className="navLink">
           <Link to="/petowners">Pet Owner</Link>
@@ -14,7 +12,6 @@ const NavBarHome = (props) => {
         <li className="navLink">
           <Link to="/businesses">Business Owner</Link>
         </li>
-
       </ul>
     </header>
   )
