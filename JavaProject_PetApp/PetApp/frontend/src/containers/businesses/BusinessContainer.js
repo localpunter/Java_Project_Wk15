@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Request from '../../helpers/request.js';
 
-class PetOwnerContainer extends Component {
+class BusinessContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      petOwners: [],
-      pets: []
+      businesses: [],
+      services: []
     }
   }
 
@@ -17,10 +17,10 @@ class PetOwnerContainer extends Component {
   render() {
     return(
       <div>
-      Hello Pet Owner!
+      Hello Business owner!
       </div>
     )
   }
 }
 
-export default PetOwnerContainer;
+export default BusinessContainer;
