@@ -1,7 +1,9 @@
 package com.codeclan.example.PetApp.models;
 
+import javax.persistence.*;
+
 @Entity
-@Table(name = "bookings");
+@Table(name = "bookings")
 
 
 public class Booking {
@@ -26,7 +28,7 @@ public class Booking {
 
         this.petId = petId;
         this.serviceId = serviceId;
-        this.date - date;
+        this.date = date;
 
     }
 
